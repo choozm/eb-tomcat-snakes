@@ -8,11 +8,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="brand" href="/"><img src="../images/snake.png" /></a>
+        <a class="brand" href="default.jsp"><img src="images/snake.png" /></a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right masthead-nav">
-          <li><a href="/">Home</a></li>
+          <li><a href="default.jsp">Home</a></li>
           <li><a href="movies">Browse Movies</a></li>
           <li><a href="add">Add a Movie</a></li> 
           <li><a href="search">Search</a></li>
