@@ -1,22 +1,22 @@
-cd src
+cd WebContent
 mkdir -p WEB-INF/classes
 echo .
-javac -d WEB-INF/classes com/snakes/model/Media.java
+javac -d WEB-INF/classes ../src/com/snakes/model/Media.java
 echo .
-javac -classpath "WEB-INF/classes;WEB-INF/lib/*" -d WEB-INF/classes com/snakes/model/Movie.java
+javac -classpath "WEB-INF/classes;WEB-INF/lib/*" -d WEB-INF/classes ../src/com/snakes/model/Movie.java
 echo .
-javac -classpath "WEB-INF/classes;WEB-INF/lib/*" -d WEB-INF/classes com/snakes/web/ListMovies.java
+javac -classpath "WEB-INF/classes;WEB-INF/lib/*" -d WEB-INF/classes ../src/com/snakes/web/ListMovies.java
 echo .
-javac -classpath "WEB-INF/classes;WEB-INF/lib/*" -d WEB-INF/classes com/snakes/web/AddMovie.java
+javac -classpath "WEB-INF/classes;WEB-INF/lib/*" -d WEB-INF/classes ../src/com/snakes/web/AddMovie.java
 echo .
-javac -classpath "WEB-INF/classes;WEB-INF/lib/*" -d WEB-INF/classes com/snakes/web/SearchMovies.java
+javac -classpath "WEB-INF/classes;WEB-INF/lib/*" -d WEB-INF/classes ../src/com/snakes/web/SearchMovies.java
 echo .
-jar -cf ROOT.war *.jsp images css js WEB-INF .ebextensions/*.config .ebextensions/*.json
+jar -cf SNAKE_MOVIES.war *.jsp images css js WEB-INF ../src/.ebextensions/*.config ../src/.ebextensions/*.json
 echo .
 if [ -d "/Library/Tomcat/webapps" ]; then
-  cp ROOT.war /Library/Tomcat/webapps
+  cp SNAKE_MOVIES.war /Library/Tomcat/webapps
   echo .
 fi
-mv ROOT.war ../
+mv SNAKE_MOVIES.war ../
 echo .
 echo "SUCCESS"
