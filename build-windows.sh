@@ -11,12 +11,12 @@ javac -classpath "WEB-INF/classes;WEB-INF/lib/*" -d WEB-INF/classes ../src/com/s
 echo .
 javac -classpath "WEB-INF/classes;WEB-INF/lib/*" -d WEB-INF/classes ../src/com/snakes/web/SearchMovies.java
 echo .
-jar -cf SNAKE_MOVIES.war *.jsp images css js WEB-INF ../src/.ebextensions/*.config ../src/.ebextensions/*.json
+jar -cf snake.war *.jsp images css js WEB-INF ../src/.ebextensions/*.config ../src/.ebextensions/*.json
 echo .
 if [ -d "/Library/Tomcat/webapps" ]; then
-  cp SNAKE_MOVIES.war /Library/Tomcat/webapps
+  cp snake.war /Library/Tomcat/webapps
   echo .
 fi
-mv SNAKE_MOVIES.war ../
+mv snake.war ../
 echo .
 echo "SUCCESS"
