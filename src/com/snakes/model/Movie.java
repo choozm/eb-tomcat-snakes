@@ -202,9 +202,17 @@ public class Movie extends Media {
 
   private static Connection getConnection() {
     // Return existing connection after first call
-    if (con != null) {
-      return con;
-    }
+    try {
+		if (con != null && con.isValid(3)) {
+			return con;
+		} else {
+			logger.warn("Database connection is null or is not valid, setting it to null.");		
+			con = null;
+		}
+	} catch (SQLException e) {
+		logger.warn(e.getMessage());
+	}
+    
     logger.trace("Getting database connection...");
     // Get RDS connection from environment properties provided by Elastic Beanstalk
     con = getRemoteConnection();
